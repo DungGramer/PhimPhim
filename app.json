@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "phimphim",
+    "slug": "phimphim",
+    "version": "1.0.0",
+		"icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#171414"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.dunggramer.phimphim"
+		},
+		"androidStatusBar": {
+			"barStyle": "light-content",
+      "backgroundColor": "#171414",
+      "translucent": false
+    }
+  }
+}
