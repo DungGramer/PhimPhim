@@ -9,8 +9,10 @@
 Download [phimphim.apk](https://drive.google.com/u/0/uc?export=download&confirm=Do-r&id=1XUg0M0YdbHPgB5G9rUu-_Y_Art7MfIao). Enable the “Unknown Sources” setting and install APK.
 
 ## Screenshots
-<img alt="Updates page" src="screenshot/home.png" width="30%" hspace="5" />
-<img alt="Search page" src="screenshot/detail.png" width="30%" hspace="5" />
+<p float="left" align="center">
+  <img alt="Updates page" src="screenshot/home.png" width="30%" hspace="5" />
+  <img alt="Search page" src="screenshot/detail.png" width="30%" hspace="5" />
+</p>
 
 ## Library
 + [Themoviedb API](api.themoviedb.org)
