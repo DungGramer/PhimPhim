@@ -24,6 +24,11 @@ function TypeMovie({ route, navigation }) {
 		const cleaned = [];
 		arr.forEach((item) => {
 			let unique = true;
+			// Vòng lặp 2 tầng lớp, ngoài ra lại còn sử dụng JSON.stringify để so sánh,
+			// và không có early exit (vì sử dụng foreach thay vì sử dụng vòng lặp for).
+			// Ngoài ra, vấn đề lớn hơn ở đây là nếu sử dụng item.id để phân biệt các 
+			// item khác nhau, thì nên sử dụng Object hoặc Map, và nếu cần giữ nguyên
+			// thứ tự của các phần tử trong object thì nên sử dụng OrderedMap.
 			cleaned.forEach((item2) => {
 				const isEqual = JSON.stringify(item.id) === JSON.stringify(item2.id);
 				if (isEqual) unique = false;
@@ -37,6 +42,8 @@ function TypeMovie({ route, navigation }) {
 	const loadList = async () => {
 		// const url = `https://api.themoviedb.org/3/genre/${id}/movies?api_key=88ea40d51844508192d5da0027b574a4&language=vi-VN&page=${page}`;
 			try {
+				// Để API key bên trong code thay vì để ra 1 file riêng hoặc để trong 1 
+				// hằng riêng?
 				const res = await fetch(`${url}?api_key=88ea40d51844508192d5da0027b574a4&language=vi-VN&page=${page}`);
 				const res_1 = await res.json();
 				const lastPage = res_1.total_pages;
@@ -97,6 +104,8 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.black
 	},
 	list: {
+		// Sử dụng ngoặc đơn thay vì ngoặc kép. Chọn 1 trong 2 rồi sau đó phải
+		// theo đúng quy tắc.
 		justifyContent: 'center',
 	}
 })

@@ -9,6 +9,9 @@ const Stack = createStackNavigator();
 
 export default function Genres() {
 	return (
+		// Nếu mà tất cả các screen đều có options giống nhau thì nên cung cấp screenOptions
+		// vào trong navigator
+		// <Stack.Navigator screenOptions={{ headerShown: false }}>
 		<Stack.Navigator>
 			<Stack.Screen name="GenresList" component={GenresList} options={{headerShown: false}} />
 			<Stack.Screen name="ListAll" component={ListAll} options={{headerShown: false}} />

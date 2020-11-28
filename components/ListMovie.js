@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, View, Text, Image, ActivityIndicator, Dimensions, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, ActivityIndicator, Dimensions, FlatList, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+// Nên sử dụng hook useWindowDimensions() thay vì get dimensions 1 lần ở đây
 const { width, height } = Dimensions.get("window");
 
 function MovieItem({image, title, onPress}) {
+	// Ví dụ
+	const { width } = useWindowDimensions()
 	return(
 		<TouchableOpacity onPress={onPress} style={styles.container}>
 			<Image source={{ uri: image}} style={styles.image} />
@@ -25,6 +28,8 @@ function ListMovie({url}) {
 		.then(res => {
 			setList(res.results);
 		}).catch(err => console.log(err));
+		// Chương trình xảy ra lỗi hiện tại chỉ mới có log ra console chứ không hiển
+		// thị lỗi cho người dùng.
 		setLoading(false);
 	}
 
