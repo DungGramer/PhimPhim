@@ -14,7 +14,9 @@ function VideoPlayer({ route }) {
 	const getLink = async (id) => {
 		try {
 			const res = await fetch("https://dunggramer.github.io/PhimPhim/dataMovie.json");
-			const res_1 = await res.json();
+			// Đặt tên biến không bao hàm ý nghĩa. Nên đặt là resBody hoặc resJson
+			const res_1 = await res.json()
+			// Biến không thay đổi thì nên dùng từ khoá `const` để khai báo
 			let find = findURL(id, res_1.results);
 			setUrl(find.url);
 		} catch (err) {

@@ -11,6 +11,7 @@ import HomeScreen from "./screens/Home";
 import Genres from "./screens/Genres";
 
 const Tab = createBottomTabNavigator();
+// Biến Stack này không được sử dụng 
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -31,6 +32,8 @@ export default function App() {
 						<Feather name="home" size={size - 5} color={color} />
 					)
 				}} />
+				// Cả 2 đều là screen nhưng mà cái này thay vì đặt tên là GenresScreen
+				// thì lại đặt tên là Genres
 				<Tab.Screen name="Genres" component={Genres} options={{
 					tabBarIcon: ({color, size}) => (
 						<FontAwesome5 name="bars" size={size - 5} color={color} />

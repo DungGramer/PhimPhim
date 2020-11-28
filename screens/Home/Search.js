@@ -49,6 +49,7 @@ function ItemList({ title, poster_path, onPress }) {
 function Search() {
 	const navigation = useNavigation();
 	const [search, setSearch] = useState({
+		// 's' ý nghĩa là gì??
 		s: "",
 		results: [],
 	});
@@ -74,6 +75,7 @@ function Search() {
 		}
 	}
 
+	// Dóng hàng??
 useEffect(() => {
 }, [search]);
 
